@@ -17,10 +17,17 @@ const RecentPics = ({ artwork }) => {
     // console.log('recentPics' + JSON.stringify(artwork[1].image))
     return (
         <div>
-            {/* {sorted} */}
-            <Creation image={artwork[0].image}></Creation>
-            <Creation image={artwork[1].image}></Creation>
-            <Creation image={artwork[2].image}></Creation>
+            {/* {artwork.map((element) => (
+                !(element.image === artwork[2].image) ?
+                <Creation image={element.image} ></Creation> : 
+            ))} */}
+
+            {artwork
+                .slice(0, 3) // creates copy "substring" of array
+                .map((element) => (
+                    <Creation image={element.image} key={element.key} ></Creation>
+                ))}
+
             <button><Link to='/gallery'>View More</Link></button>
         </div >
     )

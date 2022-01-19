@@ -7,8 +7,7 @@ const Creation = ({ image }) => {
     console.log(image)
     return (
         <div>
-
-            <img src={image} alt="Artwork" width={500} />
+            <img src={image} alt="Artwork" width={700} />
         </div>
     )
 }

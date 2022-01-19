@@ -1,18 +1,17 @@
 import Creation from "../homePage/Creation"
 
 // displays entire artwork base
-const Gallery = ({ data }) => {
-    let counter = 0;
-    let dataHolder;
-    data.forEach(element => {
-        dataHolder += <Creation image={data[counter].image} ></Creation>
-        counter++;
-    });
-    console.log(`data: ${data}`)
-    console.log(`dataHolder: ${dataHolder}`)
+
+// todo overall goal is to take in image artwork & send through Creation component
+
+// todo first element is undefined
+const Gallery = ({ artwork }) => {
     return (
         <div>
-            {dataHolder}
+            {/* {artworkHolder} */}
+            {artwork.map((element) => (
+                <Creation image={element.image} key={element.key} ></Creation>
+            ))}
         </div>
     )
 }
